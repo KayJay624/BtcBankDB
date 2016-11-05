@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+ 
+<hibernate-configuration>
+    <session-factory>
+ 
+        <!-- Connection settings -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://btc.cyo7ixkq4gww.eu-central-1.rds.amazonaws.com:5432/btc</property>
+        <!--  <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/postgres</property>-->
+        <property name="hibernate.connection.username">kamil</property>
+        <property name="hibernate.connection.password">kamil</property>
+ 
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+ 
+        <!-- Print executed SQL to stdout -->
+        <property name="show_sql">true</property>
+ 
+        <!-- Drop and re-create all database on startup -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+ 
+        <!-- Annotated entity classes -->
+        <mapping class="pl.projektowa.btcbankex.model.User"/>
+        <mapping class="pl.projektowa.btcbankex.model.Currency"/>
+        <mapping class="pl.projektowa.btcbankex.model.BankAccount"/>
+        <mapping class="pl.projektowa.btcbankex.model.Purchase"/>
+        <mapping class="pl.projektowa.btcbankex.model.Sales"/>
+        <mapping class="pl.projektowa.btcbankex.model.TokenData"/>
+        <mapping class="pl.projektowa.btcbankex.model.BankTransfer"/>
+        
+    </session-factory>
+</hibernate-configuration>
